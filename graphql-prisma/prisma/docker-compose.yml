@@ -15,8 +15,8 @@ services:
             connector: postgres
             host: ec2-107-20-237-78.compute-1.amazonaws.com
             database: da3cmqpdtehv40
-            user: zjpfrcziiozgqh
-            password: 52e2b831d681d79325272681f965c2d705d43cb36cbce5d5a35afb39e83e06f6
+            user: ---
+            password: ------
             rawAccess: true
             ssl: true
             port: '5432'
