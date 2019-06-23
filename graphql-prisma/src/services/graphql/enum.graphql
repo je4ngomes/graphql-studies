@@ -1,0 +1,38 @@
+enum MutationType {
+    CREATED
+    UPDATED
+    DELETED
+}
+
+enum CommentOrderByInput {
+    text_ASC
+    text_DESC
+    updatedAt_ASC
+    updatedAt_DESC
+    createdAt_ASC
+    createdAt_DESC
+}
+
+enum PostOrderByInput {
+  title_ASC
+  title_DESC
+  body_ASC
+  body_DESC
+  published_ASC
+  published_DESC
+  updatedAt_ASC
+  updatedAt_DESC
+  createdAt_ASC
+  createdAt_DESC
+}
+
+enum UserOrderByInput {
+  name_ASC
+  name_DESC
+  email_ASC
+  email_DESC
+  updatedAt_ASC
+  updatedAt_DESC
+  createdAt_ASC
+  createdAt_DESC
+}

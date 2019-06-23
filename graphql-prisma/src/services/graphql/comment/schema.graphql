@@ -1,0 +1,41 @@
+type Query {
+    comments(first: Int, 
+             skip: Int, 
+             after: String
+             orderBy: CommentOrderByInput): [Comment!]!
+}
+
+type Mutation {
+    createComment(data: CreateCommentInput!): Comment!
+    deleteComment(id: ID!): Comment!
+    updateComment(id: ID!, data: UpdateCommentInput!): Comment!
+}
+
+type Subscription {
+    comment(postId: ID!): CommentSubscriptionPayload!
+}
+
+type Comment {
+    id: ID!
+    text: String!
+    post: Post!
+    author: User!
+    updatedAt: String!
+    createdAt: String!
+}
+
+type CommentSubscriptionPayload {
+    mutation: MutationType!,
+    node: Comment
+}
+
+input CreateCommentInput {
+    text: String!
+    post: String!
+}
+
+input UpdateCommentInput {
+    text: String
+    author: String
+    post: String
+}

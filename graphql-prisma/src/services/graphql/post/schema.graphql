@@ -1,0 +1,53 @@
+type Query {
+    posts(query: String, 
+          first: Int, 
+          skip: Int, 
+          after: String,
+          orderBy: PostOrderByInput): [Post!]!
+
+    myPosts(query: String, 
+            first: Int, 
+            skip: Int, 
+            after: String,
+            orderBy: PostOrderByInput): [Post!]!
+    post(id: ID!): Post!
+}
+
+type Mutation {
+    createPost(data: CreatePostInput!): Post!
+    deletePost(id: ID!): Post!
+    updatePost(id: ID!, data: UpdatePostInput!): Post!
+}
+
+type Subscription {
+    post: PostSubscriptionPayload!
+    myPost: PostSubscriptionPayload!
+}
+
+type Post {
+    id: ID!
+    title: String!
+    body: String!
+    comments: [Comment!]!
+    published: Boolean!
+    author: User!
+    updatedAt: String!
+    createdAt: String!
+}
+
+type PostSubscriptionPayload {
+    mutation: MutationType!
+    node: Post
+}
+
+input CreatePostInput {
+    title: String!
+    body: String!
+    published: Boolean!
+}
+
+input UpdatePostInput {
+    title: String
+    body: String
+    published: Boolean
+}
