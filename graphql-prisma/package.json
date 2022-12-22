@@ -30,7 +30,7 @@
     "env-cmd": "^8.0.2",
     "graphql-yoga": "^1.17.4",
     "jest-environment-node": "^24.0.0",
-    "jsonwebtoken": "^8.4.0",
+    "jsonwebtoken": "^9.0.0",
     "merge-graphql-schemas": "^1.5.8",
     "prisma-binding": "^2.2.12",
     "ramda": "^0.26.1",
